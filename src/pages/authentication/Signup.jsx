@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 // import { TailSpin } from "react-loader-spinner";
 // import { useSelector } from "react-redux";
@@ -15,7 +16,7 @@ const Signup = () => {
   //   const dispatch = useDispatch();
   //   const loading = useSelector((state) => state.auth.isLoading);
   const loading = false;
-  //   const navigate = useNavigate();
+    const navigate = useNavigate();
   //   const auth = getAuth(app);
 
   //   const handleSignin = async (e) => {
@@ -55,9 +56,8 @@ const Signup = () => {
 
       {/* Image Section */}
       <img
-        src="https://sdmntprwestus2.oaiusercontent.com/files/00000000-6cd0-61f8-800f-9eca7f5b99b6/raw?se=2025-05-14T18%3A54%3A34Z&sp=r&sv=2024-08-04&sr=b&scid=00000000-0000-0000-0000-000000000000&skoid=30ec2761-8f41-44db-b282-7a0f8809659b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-05-14T11%3A31%3A53Z&ske=2025-05-15T11%3A31%3A53Z&sks=b&skv=2024-08-04&sig=8S2p19R/jIjOJMfdDw6TFmC3/DyqDLO/ji2aY2dBvls%3D"
-        // src="https://plus.unsplash.com/premium_vector-1682269608279-c30dcfc02e95?q=80&w=1416&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="restaurant"
+        src="/src/assets/dynamicqr.png"
+        alt="Dynamic QR"
         className="hidden sm:block w-full sm:w-1/2 h-1/2 sm:h-full object-cover"
       />
 
@@ -113,7 +113,7 @@ const Signup = () => {
           Already have an account?
           <span
             className="cursor-pointer text-blue-600 ml-1"
-            // onClick={() => navigate("/login")}
+            onClick={() => navigate("/login")}
           >
             Login Now
           </span>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import {
   CheckCircle,
   BarChart,
@@ -8,14 +8,15 @@ import {
   X,
   ArrowRight,
 } from "lucide-react";
+import Topnavbar from "../../components/Topnavbar";
 
 export default function LandingPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
- 
+  // const toggleMenu = () => {
+  //   setIsMenuOpen(!isMenuOpen);
+  // };
+
   const features = [
     {
       icon: <Zap className="h-6 w-6 text-blue-600" />,
@@ -36,110 +37,7 @@ export default function LandingPage() {
 
   return (
     <div className="bg-gradient-to-b from-white to-blue-50 min-h-screen flex flex-col">
-      {/* Navigation */}
-      <header className="w-full bg-white shadow-sm sticky top-0 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
-              <div className="text-2xl font-bold text-blue-700">DynamicQR</div>
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a
-                href="#features"
-                className="text-gray-600 hover:text-blue-700 transition-colors"
-              >
-                Features
-              </a>
-              <a
-                href="#api"
-                className="text-gray-600 hover:text-blue-700 transition-colors"
-              >
-                API
-              </a>
-              <a
-                href="#pricing"
-                className="text-gray-600 hover:text-blue-700 transition-colors"
-              >
-                Pricing
-              </a>
-              <a
-                href="/login"
-                className="text-gray-600 hover:text-blue-700 transition-colors"
-              >
-                Log in
-              </a>
-              <a
-                href="/signup"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
-              >
-                Sign up
-              </a>
-            </nav>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={toggleMenu}
-                className="text-gray-600 hover:text-blue-700 focus:outline-none"
-                aria-expanded={isMenuOpen}
-                aria-label="Toggle navigation menu"
-              >
-                {isMenuOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <Menu className="h-6 w-6" />
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white py-2 px-4">
-            <div className="flex flex-col space-y-3">
-              <a
-                href="#features"
-                className="text-gray-600 hover:text-blue-700 py-2 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Features
-              </a>
-              <a
-                href="#api"
-                className="text-gray-600 hover:text-blue-700 py-2 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                API
-              </a>
-              <a
-                href="#pricing"
-                className="text-gray-600 hover:text-blue-700 py-2 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Pricing
-              </a>
-              <a
-                href="/login"
-                className="text-gray-600 hover:text-blue-700 py-2 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Log in
-              </a>
-              <a
-                href="/signup"
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg text-center hover:bg-blue-700 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Sign up
-              </a>
-            </div>
-          </div>
-        )}
-      </header>
-
+      <Topnavbar/>
       {/* Hero Section */}
       <main className="flex-grow">
         <section className="py-12 md:py-24 px-4">
@@ -168,7 +66,7 @@ export default function LandingPage() {
                     Schedule a demo
                   </a>
                 </div>
-                <div className="mt-8 text-gray-500 flex items-center justify-center md:justify-start">
+                {/* <div className="mt-8 text-gray-500 flex items-center justify-center md:justify-start">
                   <div className="flex flex-col items-center md:items-start">
                     <p className="font-medium text-lg">
                       <span className="text-blue-600 font-bold">1,226,644</span>{" "}
@@ -181,7 +79,7 @@ export default function LandingPage() {
                       total scans and counting
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
               <div className="hidden md:block">
                 <div className="relative">
@@ -204,7 +102,7 @@ export default function LandingPage() {
         </section>
 
         {/* Trusted By Section */}
-        <section className="py-8 bg-gray-50">
+        {/* <section className="py-8 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
             <p className="text-center text-gray-500 text-sm uppercase font-medium mb-6">
               Trusted by innovative teams at
@@ -215,7 +113,7 @@ export default function LandingPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Features Section */}
         <section id="features" className="py-16 px-4">
