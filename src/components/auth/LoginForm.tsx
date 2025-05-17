@@ -48,8 +48,20 @@ const LoginForm = () => {
 
       console.log("User logged in successfully");
     } catch (err) {
-      console.error("Login error:", err);
-      setError("An error occurred. Please try again later.");
+      console.error("Login error:", err.code);
+      switch (err.code) {
+        case "auth/invalid-email":
+          setError("No account found with this email. Please sign up first.");
+          break;
+        case "auth/invalid-password":
+          setError("Incorrect password. Please try again.");
+          break;
+        case "auth/invalid-credential":
+          setError("Invalid credentials. Please check your login details.");
+          break;
+        default:
+          setError("An error occurred. Please try again later.");
+      }
     }
 
     setIsLoading(false);

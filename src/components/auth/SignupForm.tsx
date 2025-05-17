@@ -25,6 +25,7 @@ const SignupForm = () => {
     return password.length >= 8;
   };
 
+
   const handleSignup = async (e) => {
     e.preventDefault();
     setError("");
@@ -56,9 +57,23 @@ const SignupForm = () => {
       );
       console.log("User registered successfully");
     } catch (err) {
-      setError(err.message);
+      console.error("Signup error: ", err.code);
+      switch (err.code) {
+        case "auth/email-already-in-use":
+          setError(
+            "This email is already registered. Please log in or use a different email."
+          );
+          break;
+        case "auth/invalid-email":
+          setError("Invalid email format. Please enter a valid email address.");
+          break;
+        case "auth/weak-password":
+          setError("Password is too weak. Please choose a stronger password.");
+          break;
+        default:
+          setError("An unexpected error occurred. Please try again.");
+      }
     }
-
     setIsLoading(false);
   };
 
